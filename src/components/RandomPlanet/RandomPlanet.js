@@ -17,7 +17,7 @@ export default class RandomPlanet extends Component{
 
   onPlanetLoaded = planet => {
     this.setState({planet})
-  }
+  };
 
   updatePlanet(){
     const id = 11;
