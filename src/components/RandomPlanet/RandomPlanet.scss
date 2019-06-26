@@ -1,0 +1,18 @@
+.PlanetWrap{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  .InfoWrap{
+    width: 65%;
+  }
+  .imgWrap{
+    width: 30%;
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+.ListItem{
+  background-color: #000;
+}
