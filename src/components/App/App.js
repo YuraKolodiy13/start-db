@@ -6,11 +6,13 @@ import RandomPlanet from "../RandomPlanet/RandomPlanet";
 import ItemList from "../ItemList/ItemList";
 import PersonDetail from "../PersonDetails/PersonDetails";
 import ErrorBtn from "../ErrorBtn/ErrorBtn";
+import ErrorIndicator from '../ErrorIndicator/ErrorIndicator'
 
 class App extends Component{
 
   state = {
-    selectedPerson: 1
+    selectedPerson: 1,
+    hasError: false
   }
 
   onPersonSelected = id => {
@@ -18,7 +20,20 @@ class App extends Component{
       selectedPerson: id
     })
   }
+
+  componentDidCatch(){
+    this.setState({
+      hasError: true
+    })
+  }
+
+
   render(){
+
+    if(this.state.hasError){
+      return <ErrorIndicator/>
+    }
+
     return(
         <div>
           <Header/>
