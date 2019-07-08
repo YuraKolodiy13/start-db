@@ -1,10 +1,13 @@
 .RandomPlanet{
   height: 428px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 50px;
 }
 .PlanetWrap{
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
   .InfoWrap{
     width: 65%;
   }
@@ -22,9 +25,10 @@
 .btn{
   color: #fff;
   border: 1px solid ;
-  margin-top: 30px;
   transition: .3s;
   cursor: pointer;
+  width: 150px;
+  margin: 30px auto 0;
   &:hover{
     background-color: brown;
     color: #fff;

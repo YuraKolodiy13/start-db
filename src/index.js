@@ -3,4 +3,12 @@ import ReactDOM from 'react-dom'
 
 import App from './components/App/App'
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+import {BrowserRouter} from  'react-router-dom'
+
+const app = (
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
+
+ReactDOM.render(app, document.getElementById('root'));

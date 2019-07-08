@@ -12,5 +12,16 @@
     padding: 0;
     margin: 0;
     width: 60%;
+    li{
+      a{
+        color: #fff;
+        text-decoration: none;
+        transition: .3s;
+        &:hover,
+        &.active{
+          color: brown;
+        }
+      }
+    }
   }
 }

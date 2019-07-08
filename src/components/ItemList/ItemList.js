@@ -1,21 +1,19 @@
 import React, {Component} from 'react'
 import './ItemList.scss'
-import SwapiService from '../../services/swapi-service'
 import Loader from "../Loader/Loader";
 
 export default class ItemList extends Component{
 
-  swapiService = new SwapiService();
-
   state = {
-    peopleList: null
+    itemList: null
   };
 
   componentDidMount(){
-    this.swapiService.getAllPeople()
-      .then(peopleList => {
+    const {getData} = this.props;
+      getData()
+      .then(itemList => {
         this.setState({
-          peopleList
+          itemList
         })
   })}
 
@@ -28,16 +26,15 @@ export default class ItemList extends Component{
 
   render(){
 
-    if(!this.state.peopleList) {
+    if(!this.state.itemList) {
       return <Loader/>
     }
-
     return(
       <ul className='item-list list-group ItemList'>
-        {this.state.peopleList.map(({id, name}) =>
+        {this.state.itemList.map(({id, name}) =>
           <li
             key={id}
-            className={`list-group-item ListItem hovered ${+this.props.personId === +id ? 'active' : null}`}
+            className={`list-group-item ListItem hovered ${+this.props.personId === +id ? 'active' : ''}`}
             onClick={() => this.onItemSelected(id)}>
             {name}
           </li>)}

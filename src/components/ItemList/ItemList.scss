@@ -16,6 +16,11 @@
   }
   .InfoWrap{
     width: 55%;
+    ul{
+      li:first-of-type{
+        display: none;
+      }
+    }
   }
   .hovered{
     transition: .3s;
